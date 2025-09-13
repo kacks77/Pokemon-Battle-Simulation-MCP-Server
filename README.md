@@ -1,6 +1,7 @@
 # ⚔️ Pokémon Battle Simulation – MCP Server  
 
-This project is a fully functional **MCP server** that gives LLMs - Claude Sonnet 4 access to Pokémon knowledge and a battle simulation environment.  
+This project is a fully functional **MCP server** that gives **Large Language Models(LLMs)** - **Claude Sonnet 4** access to Pokémon knowledge and a battle simulation environment.  
+
 It implements both **Pokémon data resource** (Part 1) and **battle simulation tool** (Part 2), following the guidelines in the Scopely technical assessment.  
 
 ---
@@ -14,10 +15,10 @@ It implements both **Pokémon data resource** (Part 1) and **battle simulation t
 
 ## 📜 Overview  
 
-This MCP server allows any AI model to:  
+This MCP server allows the AI model to:  
 
 1. **Access Pokémon Data**  
-   Fetch comprehensive information about any Pokémon, including its types, base stats, abilities, available moves, and evolution chain.  
+   Fetch comprehensive information about any Pokémon, including its name, types, stats, abilities, moves, and evolution chain.  
 
 2. **Simulate Pokémon Battles**  
    Input two Pokémon names, simulate a turn-based battle with speed-based turn order, core damage calculations, three status effects (Paralysis, Burn, Poison), and a detailed battle log.  
@@ -78,7 +79,7 @@ source .venv/bin/activate  # macOS/Linux
 uv add "mcp[cli]" httpx
 uv add fastmcp --active
 
-### 3. Install dependencies
+### 3. Install required dependencies
 pip install -r requirements.txt
 
 ### 4. Verify installations
