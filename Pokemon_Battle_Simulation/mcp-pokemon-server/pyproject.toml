@@ -1,0 +1,11 @@
+[project]
+name = "mcp-pokemon-server"
+version = "0.1.0"
+description = "A Pokémon battle simulation server using FastMCP and async HTTP requests. Supports fetching Pokémon data, simulating battles, and handling status effects, and connects directly to Claude Sonnet 4 LLM via FastMCP for AI-driven battle commentary and intelligent opponent behavior."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastmcp>=2.12.3",
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.13.1",
+]
