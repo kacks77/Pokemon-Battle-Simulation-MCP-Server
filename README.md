@@ -9,8 +9,8 @@ It implements both **Pokémon data resource** (Part 1) and **battle simulation t
 
 - [📜 Overview](#-overview)  
 - [✨ Features](#-features)  
+- [📁 Installation & Setup ](#-installation-and-setup)
 - [🏗 Project Structure](#-project-structure)  
-- [📁 Installation & Setup ](#-installation)  
 
 ## 📜 Overview  
 
@@ -49,13 +49,50 @@ This project bridges the gap between **Pokémon knowledge** and **AI reasoning**
 - Easily integrates with LLM pipelines  
 
 ### 📸 Screenshots:
-![Working tool with Claude Sonnet 4 LLM](mcp-pokemon-server/working-screenshots/Working_Pokemon_Battle_Tool_Image1.png)
+- Image 1
+![Working tool with Claude Sonnet 4 LLM](Pokemon_Battle_Simulation/mcp-pokemon-server/working-screenshots/Working_Pokemon_Battle_Tool_Image1.png)
 
 
-![Working tool with Claude Sonnet 4 LLM](mcp-pokemon-server/working-screenshots/Working_Pokemon_Battle_Tool_Image2.png)
+- Image 2
+![Working tool with Claude Sonnet 4 LLM](Pokemon_Battle_Simulation/mcp-pokemon-server/working-screenshots/Working_Pokemon_Battle_Tool_Image2.png)
 ---
 
+
+
+## 📁 Installation & Setup  
+
+This project uses [uv](https://docs.astral.sh/uv/getting-started/installation/) for fast Python dependency management and environment handling.
+
+
+### 1. Clone the repository
+git clone https://github.com/kacks77/Pokemon-Battle-Simulation-MCP-Server.git
+cd Pokemon_Battle_Simulation
+cd mcp-pokemon-server
+
+### 2. Create and activate virtual environment using uv
+uv venv
+source .venv/bin/activate  # macOS/Linux
+.venv\Scripts\activate     # Windows
+
+### 3. Add dependencies using uv(optional if using reqirements.txt)
+uv add "mcp[cli]" httpx
+uv add fastmcp --active
+
+### 3. Install dependencies
+pip install -r requirements.txt
+
+### 4. Verify installations
+uv run --active python -c "import mcp, httpx; print('✅ mcp + httpx installed in ACTIVE env')"
+uv run --active python -c "from fastmcp import FastMCP; print('✅ FastMCP class is available')"
+
+### 5. Install Claude Desktop connector for FastMCP
+fastmcp install claude-desktop server.py
+
+### 6. Run the MCP server
+uv run --active --with fastmcp fastmcp run server.py
+
 ## 🏗 Project Structure  
+```bash
 POKEMON_BATTLE_SIMULATION/
  ├── .venv/                # Virtual environment
  ├── mcp-pokemon-server/   # Package folder
@@ -67,35 +104,3 @@ POKEMON_BATTLE_SIMULATION/
     ├── requirements.txt      # Required installation            
     ├── server.py             # Main MCP server code(Part 1 and Part 2)
     ├── uv.lock               # Lock file for reproducible builds
-
-## 📁 Installation & Setup  
-
-This project uses [uv](https://docs.astral.sh/uv/getting-started/installation/) for fast Python dependency management and environment handling.
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/kacks77/Pokemon-Battle-Simulation-MCP-Server.git
-cd Pokemon_Battle_Simulation
-cd mcp-pokemon-server
-
-# 2. Create and activate virtual environment using uv
-uv venv
-source .venv/bin/activate  # macOS/Linux
-.venv\Scripts\activate     # Windows
-
-# 3. Add dependencies using uv(optional if using reqirements.txt)
-uv add "mcp[cli]" httpx
-uv add fastmcp --active
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-# 4. Verify installations
-uv run --active python -c "import mcp, httpx; print('✅ mcp + httpx installed in ACTIVE env')"
-uv run --active python -c "from fastmcp import FastMCP; print('✅ FastMCP class is available')"
-
-# 5. Install Claude Desktop connector for FastMCP
-fastmcp install claude-desktop server.py
-
-# 6. Run the MCP server
-uv run --active --with fastmcp fastmcp run server.py
