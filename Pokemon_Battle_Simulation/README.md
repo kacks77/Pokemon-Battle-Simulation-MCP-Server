@@ -49,10 +49,10 @@ This project bridges the gap between **Pokémon knowledge** and **AI reasoning**
 - Easily integrates with LLM pipelines  
 
 ### 📸 Screenshots:
-![Working tool with Claude Sonnet 4 LLM](working-screenshots/Working_Pokemon_Battle_Tool_Image1.png)
+![Working tool with Claude Sonnet 4 LLM](mcp-pokemon-server/working-screenshots/Working_Pokemon_Battle_Tool_Image1.png)
 
 
-![Working tool with Claude Sonnet 4 LLM](working-screenshots/Working_Pokemon_Battle_Tool_Image2.png)
+![Working tool with Claude Sonnet 4 LLM](mcp-pokemon-server/working-screenshots/Working_Pokemon_Battle_Tool_Image2.png)
 ---
 
 ## 🏗 Project Structure  
